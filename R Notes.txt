@@ -1,0 +1,250 @@
+2/1/2014    Saturday
+winners <- read.delim('clipboard')) # reading clipboard copied from excel
+
+CTRL-SHIFT-ENTER: send all lines to console
+CTRL-ENTER: send single line to console
+
+------------------
+2/2/2014    Sunday
+names <- c('Kevin','Mandy', 'Sophia')
+[1] "Kevin"  "Mandy"  "Sophia"
+
+nums <- c(1,2,3,4)
+[1] 1 2 3 4
+
+nums2 <- c(1,2,3,4.25)
+[1] 1.00 2.00 3.00 4.25
+
+seq(2,20,2)
+seq(from=2, to=20, by=2)
+ [1]  2  4  6  8 10 12 14 16 18 20
+ 
+seq(by=4,to=20,from=2)
+[1]  2  6 10 14 18
+
+rep(names,3)
+[1] "Kevin"  "Mandy"  "Sophia" "Kevin"  "Mandy"  "Sophia"
+[7] "Kevin"  "Mandy"  "Sophia"
+
+rep(names, each=3)
+[1] "Kevin"  "Kevin"  "Kevin"  "Mandy"  "Mandy"  "Mandy" 
+[7] "Sophia" "Sophia" "Sophia"
+
+girls <- c('Juliet', 'Sierra')
+boys <- c('Romeo','Oscar')
+everyone <- c(girls, boys)
+[1] "Juliet" "Sierra" "Romeo"  "Oscar"
+
+everyone[2]
+[1] "Sierra"
+
+everyone[-2]
+[1] "Juliet" "Romeo"  "Oscar" 
+
+everyone[c(1,3)]
+[1] "Juliet" "Romeo" 
+
+everyone[c(3,1)]
+[1] "Romeo"  "Juliet"
+
+everyone[c(1,1,3,3)]
+[1] "Juliet" "Juliet" "Romeo"  "Romeo"
+
+everyone[c(-1,-3)]
+[1] "Sierra" "Oscar" 
+
+x <- seq(2,8,2)
+sum(x)
+[1] 20
+
+y <- c(7,8,3,1)
+mean(y)
+[1] 4.75
+
+x*2
+[1]  4  8 12 16
+
+y+3
+[1] 10 11  6  4
+
+x+y
+[1]  9 12  9  9
+
+x*y
+[1] 14 32 18  8
+
+Names <- c('Romeo','Juliet','Oscar','Sierra')
+Gender <- c('M','F','M','F')
+Occupation <- c('Clown','Magician','Hobo','Unemployed')
+FaveFood <- c('Tuna','Sausage','Melons','Kimchi')
+winners <- data.frame(Names, Gender, Occupation, FaveFood)
+   Names Gender Occupation FaveFood
+1  Romeo      M      Clown     Tuna
+2 Juliet      F   Magician  Sausage
+3  Oscar      M       Hobo   Melons
+4 Sierra      F Unemployed   Kimchi
+
+> head(mtcars)
+                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+
+> tail(mtcars,3)
+               mpg cyl disp  hp drat   wt qsec vs am gear carb
+Ferrari Dino  19.7   6  145 175 3.62 2.77 15.5  0  1    5    6
+Maserati Bora 15.0   8  301 335 3.54 3.57 14.6  0  1    5    8
+Volvo 142E    21.4   4  121 109 4.11 2.78 18.6  1  1    4    2
+
+> str(mtcars)
+'data.frame':	32 obs. of  11 variables:
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+ 
+ > summary(mtcars)
+      mpg             cyl             disp             hp             drat      
+ Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0   Min.   :2.760  
+ 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5   1st Qu.:3.080  
+ Median :19.20   Median :6.000   Median :196.3   Median :123.0   Median :3.695  
+ Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7   Mean   :3.597  
+ 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0   3rd Qu.:3.920  
+ Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0   Max.   :4.930  
+       wt             qsec             vs               am              gear      
+ Min.   :1.513   Min.   :14.50   Min.   :0.0000   Min.   :0.0000   Min.   :3.000  
+ 1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:3.000  
+ Median :3.325   Median :17.71   Median :0.0000   Median :0.0000   Median :4.000  
+ Mean   :3.217   Mean   :17.85   Mean   :0.4375   Mean   :0.4062   Mean   :3.688  
+ 3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:4.000  
+ Max.   :5.424   Max.   :22.90   Max.   :1.0000   Max.   :1.0000   Max.   :5.000  
+      carb      
+ Min.   :1.000  
+ 1st Qu.:2.000  
+ Median :2.000  
+ Mean   :2.812  
+ 3rd Qu.:4.000  
+ Max.   :8.000  
+ 
+ > mtcars[1,2]
+[1] 6
+> mtcars[1,]
+          mpg cyl disp  hp drat   wt  qsec vs am gear carb
+Mazda RX4  21   6  160 110  3.9 2.62 16.46  0  1    4    4
+> mtcars[,1]
+ [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4
+[17] 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7 15.0 21.4
+
+> mtcars$mpg>30
+ [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[14] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+[27] FALSE  TRUE FALSE FALSE FALSE FALSE
+> mtcars[mtcars$mpg>30,]
+                mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Fiat 128       32.4   4 78.7  66 4.08 2.200 19.47  1  1    4    1
+Honda Civic    30.4   4 75.7  52 4.93 1.615 18.52  1  1    4    2
+Toyota Corolla 33.9   4 71.1  65 4.22 1.835 19.90  1  1    4    1
+Lotus Europa   30.4   4 95.1 113 3.77 1.513 16.90  1  1    5    2
+
+> mtcars[mtcars$mpg>30, c('mpg','disp')]
+                mpg disp
+Fiat 128       32.4 78.7
+Honda Civic    30.4 75.7
+Toyota Corolla 33.9 71.1
+Lotus Europa   30.4 95.1
+
+> sum_sqr <- function (x) {sum(x^2)}
+> sum_sqr(10)
+[1] 100
+> sum_sqr(1:10)
+[1] 385
+> sum_sqr(5.5)
+[1] 30.25
+
+> fun <- function(x, y) {x^2+y}
+> fun(10,5)
+[1] 105
+> '%f%' <- function(x, y) {x^2+y}
+> 10 %f% 5
+[1] 105
+
+> df1 <- data.frame(
++   key = c('aaa','bbb','ccc'),
++   field1 = c(3,1,4)
++ )
+> 
+> df2 <- data.frame(
++   key = c('aaa','ccc', 'eee'),
++   field2 = c(2,1,7)
++ )
+> df1
+  key field1
+1 aaa      3
+2 bbb      1
+3 ccc      4
+> df2
+  key field2
+1 aaa      2
+2 ccc      1
+3 eee      7
+> merge(df1, df2, by = c('key'))
+  key field1 field2
+1 aaa      3      2
+2 ccc      4      1
+
+> merge(df1, df2, by = c('key'), all.x = TRUE)
+  key field1 field2
+1 aaa      3      2
+2 bbb      1     NA
+3 ccc      4      1
+
+> merge(df1, df2, by = c('key'), all.y = TRUE, all.x=TRUE)
+  key field1 field2
+1 aaa      3      2
+2 bbb      1     NA
+3 ccc      4      1
+4 eee     NA      7
+
+> merge(df1, df2, by = c('key'), all = TRUE)
+  key field1 field2
+1 aaa      3      2
+2 bbb      1     NA
+3 ccc      4      1
+4 eee     NA      7
+
+> getwd()
+[1] "C:/Users/Default.Win7sp1"
+> setwd('..')
+> getwd()
+[1] "C:/Users"
+> list.files()
+[1] "All Users"       "Default"         "Default User"   
+[4] "Default.Win7sp1" "desktop.ini"     "Public"        
+
+> getwd()
+[1] "C:/Users/Default.Win7sp1"
+> setwd('..')
+> getwd()
+[1] "C:/Users"
+> list.files()
+[1] "All Users"       "Default"         "Default User"   
+[4] "Default.Win7sp1" "desktop.ini"     "Public"     
+df <- read.csv('data.csv')
+df$NewField <- 1
+write.csv(df, 'data new.csv')
+
+?strptime
+Date-time Conversion Functions to and from Character
+
+df$game_date <- as.Date(substr(df$Game.ID,1,8), '%Y%m%d')
+
