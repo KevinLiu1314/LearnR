@@ -233,18 +233,26 @@ Lotus Europa   30.4 95.1
 
 > getwd()
 [1] "C:/Users/Default.Win7sp1"
-> setwd('..')
-> getwd()
-[1] "C:/Users"
+> setwd('c:\\Repositories\\LearnR')
 > list.files()
-[1] "All Users"       "Default"         "Default User"   
-[4] "Default.Win7sp1" "desktop.ini"     "Public"     
-df <- read.csv('data.csv')
-df$NewField <- 1
+[1] "data new.csv"                     "hello.r"                         
+[3] "NBA GameDetails 2012-2013 v0.csv" "R Notes.txt"
+df <- read.csv('NBA GameDetails 2012-2013 v0.csv')
+df$game_date <- as.Date(substr(df$Game.ID,1,8), '%Y%m%d')
 write.csv(df, 'data new.csv')
 
 ?strptime
 Date-time Conversion Functions to and from Character
 
-df$game_date <- as.Date(substr(df$Game.ID,1,8), '%Y%m%d')
+?regex
+regular expressions
+
+> class("1")
+[1] "character"
+
+---------------------
+2/4/2014    Tuesday
+write.csv(df,'NBA v001.csv',row.names=FALSE)    # suppress the row numbers in first column
+
+
 
