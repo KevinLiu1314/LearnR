@@ -323,3 +323,9 @@ library(plyr)
 137       Dwyane Wade  wadedw01 21.20290 6.641181
 290 LaMarcus Aldridge aldrila01 21.08108 6.562151
 
+---------------
+2/8/2014    Saturday
+
+install.packages("ggplot2")
+library(ggplot2)
+
